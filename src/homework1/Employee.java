@@ -10,9 +10,5 @@ package homework1;
  * @author AleAlRodionov
  */
 public class Employee {
-    
-    
-    
-    
-    
+      
 }
