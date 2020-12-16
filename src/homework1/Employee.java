@@ -11,13 +11,4 @@ package homework1;
  */
 public class Employee {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
