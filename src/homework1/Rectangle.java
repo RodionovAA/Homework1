@@ -30,8 +30,6 @@ public class Rectangle {
          this.length = length;
     }
      
-    
-    
     public float getWidth(){
          return this.width;
     }
