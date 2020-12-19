@@ -15,16 +15,10 @@ public class HomeWork1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        Author[] b= {new Author()};
-        
-        Book a = new Book("Sasha",b,1.9);
-      
-        MyPoint point = new MyPoint(1,1);
-        
-        MyTriangle t = new MyTriangle(0,0,0,3,3,0);
-        
-        System.out.println(t.getPerimetr());
+        double[] input =   {10.0,14.0,1.0,2.0,3.0};
+        double[] input1 =  {20.0,10.0,14.0};
+     MyPolynomial a = new MyPolynomial(input);
+     System.out.println(a.multiply(new MyPolynomial(input1)).toString());
     }
     
 }
