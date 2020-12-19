@@ -57,7 +57,7 @@ public class MyTriangle {
         
         double res = 0.0;
         res = this.v1.distance(this.v2);
-        res += this.v3.distance(this.v3);
+        res += this.v2.distance(this.v3);
         res += this.v3.distance(this.v1);
         
         return res;

@@ -16,10 +16,15 @@ public class HomeWork1 {
      */
     public static void main(String[] args) {
         
+        Author[] b= {new Author()};
         
+        Book a = new Book("Sasha",b,1.9);
+      
+        MyPoint point = new MyPoint(1,1);
         
-        Employee a = new Employee(1,"Sasha","Rodionov",123);
-        System.out.println(a.raiseSalary(30));
+        MyTriangle t = new MyTriangle(0,0,0,3,3,0);
+        
+        System.out.println(t.getPerimetr());
     }
     
 }
