@@ -20,8 +20,6 @@ public class MyPolynomial {
         
         if (this.coeffs.length > 2){
             for(int i = this.coeffs.length-1; i>1; i--){
-                System.out.println(res);
-                 System.err.println(this.coeffs[i]);
                 res+=Double.toString(this.coeffs[i])+"x^"+Integer.toString(i)+"+";
             }
             
