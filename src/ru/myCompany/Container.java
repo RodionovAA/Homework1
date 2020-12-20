@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ru.myCompany;
 
 /**
@@ -73,23 +68,29 @@ public class Container {
     }
     
     public static void main(String args[]){
-        Ball b = new Ball(50.0f,50.0f,10,1,45);
+        Ball b = new Ball(50.0f,50.0f,10,5,45);
         Container c = new Container(0,0,100,100);
         
         for(int i = 0;i<100;i++){
-            System.out.println(i);
-            b.move();
-            if (c.collides(b)){
-                if ( ((b.getX() + b.getRadius()) >= c.x2) ||
-                     ((b.getX() - b.getRadius()) <= c.x1)){
+
+                b.move();
+                
+                if (b.getX() + b.getRadius() >= c.x2){
                     b.reflectVertical();
                 }
-                if ( ((b.getY() + b.getRadius()) >= c.y2) ||
-                     ((b.getY() - b.getRadius()) <= c.y1)){
+                
+                if (b.getX() - b.getRadius() <= c.x1){
+                    b.reflectVertical();
+                }
+                
+                if (b.getX() + b.getRadius() >= c.y2){
                     b.reflectHorizontal();
                 }
-            }
-            System.out.println(Float.toString(b.getX())+" "+ Float.toString(b.getY()));
+                
+               if (b.getX() - b.getRadius() <= c.y1){
+                    b.reflectHorizontal();
+                }
+
         }
     }
 }
