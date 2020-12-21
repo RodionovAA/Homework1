@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ru.myCompany;
+package ru.myCompany.ball;
 
 /**
  *
@@ -20,8 +20,8 @@ public class Ball {
         this.x = x;
         this.y = y;
         this.radius = radius;
-        this.xDelta = (float) (speed*Math.cos(direction%180));
-        this.yDelta = -(float) (speed*Math.sin(direction%180));
+        this.xDelta = (float) (speed*Math.cos((direction%180)*(Math.PI/180)));
+        this.yDelta = -(float) (speed*Math.sin((direction%180)*(Math.PI/180)));
     }
 
     public float getX() {

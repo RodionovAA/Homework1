@@ -1,4 +1,4 @@
-package ru.myCompany;
+package ru.myCompany.mycomplex;
 /**
  *
  * @author AleAlRodionov
