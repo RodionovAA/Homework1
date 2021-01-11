@@ -5,6 +5,8 @@
  */
 package ru.myCompany.book;
 
+import java.util.Objects;
+
 /**
  *
  * @author AleAlRodionov
@@ -36,6 +38,35 @@ public class Author {
 
     public void setGender(char gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.name);
+        hash = 29 * hash + this.gender;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Author other = (Author) obj;
+        if (this.gender != other.gender) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        return true;
     }
     
 }
