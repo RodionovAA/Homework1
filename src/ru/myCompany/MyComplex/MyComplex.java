@@ -145,4 +145,12 @@ public class MyComplex {
         MyComplex res = new MyComplex(this.getReal(),-this.getImage());
         return res;   
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 73 * hash + (int) (Double.doubleToLongBits(this.real) ^ (Double.doubleToLongBits(this.real) >>> 32));
+        hash = 73 * hash + (int) (Double.doubleToLongBits(this.image) ^ (Double.doubleToLongBits(this.image) >>> 32));
+        return hash;
+    }
 }

@@ -49,4 +49,34 @@ public class Rectangle {
     public String toString(){
         return "Rectangle[length="+Float.toString(this.length)+",width="+Float.toString(this.width)+"}";
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 31 * hash + Float.floatToIntBits(this.length);
+        hash = 31 * hash + Float.floatToIntBits(this.width);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Rectangle other = (Rectangle) obj;
+        if (Float.floatToIntBits(this.length) != Float.floatToIntBits(other.length)) {
+            return false;
+        }
+        if (Float.floatToIntBits(this.width) != Float.floatToIntBits(other.width)) {
+            return false;
+        }
+        return true;
+    }
+    
 }

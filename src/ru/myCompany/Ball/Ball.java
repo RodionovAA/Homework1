@@ -79,4 +79,41 @@ public class Ball {
     public String toString(){
         return "Ball[("+Float.toString(this.x)+","+Float.toString(this.y)+",speed("+Float.toString(this.xDelta)+","+Float.toString(this.yDelta)+")]";
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 31 * hash + Float.floatToIntBits(this.x);
+        hash = 31 * hash + Float.floatToIntBits(this.y);
+        hash = 31 * hash + this.radius;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Ball other = (Ball) obj;
+        if (Float.floatToIntBits(this.x) != Float.floatToIntBits(other.x)) {
+            return false;
+        }
+        if (Float.floatToIntBits(this.y) != Float.floatToIntBits(other.y)) {
+            return false;
+        }
+        if (this.radius != other.radius) {
+            return false;
+        }
+        return true;
+    }
+
+ 
+    
+    
 }

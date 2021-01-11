@@ -5,6 +5,8 @@
  */
 package ru.myCompany.mytriangle;
 
+import java.util.Objects;
+
 /**
  *
  * @author AleAlRodionov
@@ -76,5 +78,40 @@ public class MyTriangle {
             return "Scalene";
         }
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.v1);
+        hash = 41 * hash + Objects.hashCode(this.v2);
+        hash = 41 * hash + Objects.hashCode(this.v3);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MyTriangle other = (MyTriangle) obj;
+        if (!Objects.equals(this.v1, other.v1)) {
+            return false;
+        }
+        if (!Objects.equals(this.v2, other.v2)) {
+            return false;
+        }
+        if (!Objects.equals(this.v3, other.v3)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
     
 }

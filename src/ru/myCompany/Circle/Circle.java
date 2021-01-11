@@ -5,6 +5,8 @@
  */
 package ru.myCompany.circle;
 
+import java.util.Objects;
+
 /**
  *
  * @author AleAlRodionov
@@ -48,6 +50,35 @@ public class Circle {
    
     public double getArea(){
         return Math.PI*Math.pow(radius, 2.0);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 31 * hash + (int) (Double.doubleToLongBits(this.radius) ^ (Double.doubleToLongBits(this.radius) >>> 32));
+        hash = 31 * hash + Objects.hashCode(this.color);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Circle other = (Circle) obj;
+        if (Double.doubleToLongBits(this.radius) != Double.doubleToLongBits(other.radius)) {
+            return false;
+        }
+        if (!Objects.equals(this.color, other.color)) {
+            return false;
+        }
+        return true;
     }
     
 }

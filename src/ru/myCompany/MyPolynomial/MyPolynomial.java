@@ -1,5 +1,7 @@
 package ru.myCompany.mypolynomial;
 
+import java.util.Arrays;
+
 /**
  *
  * @author AleAlRodionov
@@ -66,5 +68,31 @@ public class MyPolynomial {
         MyPolynomial res = new MyPolynomial(resArr);
         return res;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + Arrays.hashCode(this.coeffs);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MyPolynomial other = (MyPolynomial) obj;
+        if (!Arrays.equals(this.coeffs, other.coeffs)) {
+            return false;
+        }
+        return true;
+    }
+    
 
 }
